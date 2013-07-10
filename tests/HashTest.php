@@ -89,6 +89,17 @@ class HashTest extends PHPUnit_Framework_TestCase
 		$this->assertSame('{"name":"Dave","author":true}', $this->hash->toJSON());
 	}
 
+	public function testObjectAccess()
+	{
+		$this->assertSame('Dave', $this->hash->name);
+	}
+
+	public function testObjectSet()
+	{
+		$this->hash->extra = 'Yes!';
+		$this->assertSame('Yes!', $this->hash->extra);
+	}
+
 	public function testArrayAccessGet()
 	{
 		$this->assertSame('Dave', $this->hash['name']);

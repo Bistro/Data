@@ -124,8 +124,29 @@ class Hash implements \ArrayAccess, \Countable, \IteratorAggregate
 	}
 
 /** ====================
+    Object Access
+    ==================== **/
+
+    /**
+     * @param string $propery  The property to access
+     */
+	public function __get($property)
+	{
+		return $this->offsetGet($property);
+	}
+
+	/**
+	 * @param string $property The property to set
+	 * @param mixed  $value    The value to set
+	 */
+	public function __set($property, $value)
+	{
+		$this->offsetSet($property, $value);
+	}
+
+/** ====================
 	ArrayAccess
-	==================== */
+	==================== **/
 
 	/**
 	 * @param  mixed  $offset  The offest name
