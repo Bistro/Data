@@ -1,4 +1,17 @@
-# Peyote
+# Bistro: Data
+
+The Bistro data package contains a lot of useful classes to help you manage your
+data.
+
+
+## Heavy Development!!!
+
+Everything below may or may not be correct. I'm working on merging a few different
+repos I have created into this larger package, so please be patient while I get things
+in order.
+
+----------------
+
 
 A MySQL query builder engine for PDO which requires PHP 5.3.
 
