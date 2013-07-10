@@ -1,12 +1,9 @@
 <?php
 
-namespace Peyote;
+namespace Bistro\Data\Query;
 
 /**
- * An interface for Peyote builder classes.
- *
- * @package    Peyote
- * @author     Dave Widmer <dave@davewidmer.net>
+ * An interface for Query builder classes.
  */
 interface Builder
 {

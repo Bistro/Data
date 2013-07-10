@@ -1,14 +1,11 @@
 <?php
 
-namespace Peyote;
+namespace Bistro\Data\Query;
 
 /**
- * A class to build WHERE clauses.
- *
- * @package    Peyote
- * @author     Dave Widmer <dave@davewidmer.net>
+ * A class to build HAVING clauses.
  */
-class Where extends \Peyote\Condition implements \Peyote\Mixin
+class Having extends Condition implements Mixin
 {
 	/**
 	 * Gets the type of sorting query we are running.
@@ -17,32 +14,32 @@ class Where extends \Peyote\Condition implements \Peyote\Mixin
 	 */
 	public function getType()
 	{
-		return "WHERE";
+		return "HAVING";
 	}
 
 	/**
-	 * Builds an AND WHERE clause.
+	 * Builds an AND HAVING clause.
 	 *
 	 * @param  string $column  The column name
 	 * @param  string $op      The comparison operator
 	 * @param  mixed  $value   The value to bind
-	 * @return \Peyote\Where
+	 * @return \Bistro\Data\Query\Having
 	 */
-	public function andWhere($column, $op, $value)
+	public function andHaving($column, $op, $value)
 	{
 		$this->clauses[] = array("AND", $column, $op, $value);
 		return $this;
 	}
 
 	/**
-	 * Builds an OR WHERE clause.
+	 * Builds an OR HAVING clause.
 	 *
 	 * @param  string $column  The column name
 	 * @param  string $op      The comparison operator
 	 * @param  mixed  $value   The value to bind
-	 * @return \Peyote\Where
+	 * @return \Bistro\Data\Query\Having
 	 */
-	public function orWhere($column, $op, $value)
+	public function orHaving($column, $op, $value)
 	{
 		$this->clauses[] = array("OR", $column, $op, $value);
 		return $this;
@@ -55,7 +52,7 @@ class Where extends \Peyote\Condition implements \Peyote\Mixin
 	 */
 	public function getMethods()
 	{
-		return array('andWhere', 'orWhere');
+		return array('andHaving', 'orHaving');
 	}
 
 }

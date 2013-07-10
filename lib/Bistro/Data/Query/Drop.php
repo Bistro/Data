@@ -1,12 +1,9 @@
 <?php
 
-namespace Peyote;
+namespace Bistro\Data\Query;
 
 /**
  * The DROP table class
- *
- * @package    Peyote
- * @author     Dave Widmer <dave@davewidmer.net>
  */
 class Drop implements Builder
 {
@@ -52,7 +49,7 @@ class Drop implements Builder
 
 	/**
 	 * @param string $table The table name to drop.
-	 * @return \Peyote\Drop
+	 * @return \Bistro\Data\Query\Drop
 	 */
 	public function setTable($table)
 	{
@@ -70,7 +67,7 @@ class Drop implements Builder
 
 	/**
 	 * @param  boolean $exists Add the IF EXISTS clause?
-	 * @return \Peyote\Drop
+	 * @return \Bistro\Data\Query\Drop
 	 */
 	public function setIfExists($exists)
 	{

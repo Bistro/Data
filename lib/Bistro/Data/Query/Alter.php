@@ -1,12 +1,9 @@
 <?php
 
-namespace Peyote;
+namespace Bistro\Data\Query;
 
 /**
  * A class to allow table altering.
- *
- * @package    Peyote
- * @author     Dave Widmer <dave@davewidmer.net>
  */
 class Alter implements Builder
 {
@@ -38,7 +35,7 @@ class Alter implements Builder
 
 	/**
 	 * @param string $table The table name to drop.
-	 * @return \Peyote\Alter
+	 * @return \Bistro\Data\Query\Alter
 	 */
 	public function setTable($table)
 	{
@@ -55,12 +52,12 @@ class Alter implements Builder
 	}
 
 	/**
-	 * @param string|\Peyote\Column $column     The column name or Peyote column
-	 * @return \Peyote\Alter                    $this
+	 * @param string|\Bistro\Data\Query\Column $column     The column name or \Bistro\Data\Query\Column column
+	 * @return Bistro\Data\Query\Alter                     $this
 	 */
 	public function addColumn($column)
 	{
-		if ($column instanceof \Peyote\Column)
+		if ($column instanceof \Bistro\Data\Query\Column)
 		{
 			$column = $column->compile();
 		}
@@ -71,7 +68,7 @@ class Alter implements Builder
 
 	/**
 	 * @param  string $column The columns name
-	 * @return \Peyote\Alter
+	 * @return \Bistro\Data\Query\Alter
 	 */
 	public function addPrimaryKey($column)
 	{
@@ -82,7 +79,7 @@ class Alter implements Builder
 	 * 
 	 * @param  string $column The column name to add as a key
 	 * @param  string $type   The type of key to add
-	 * @return \Peyote\Alter  $this
+	 * @return \Bistro\Data\Query\Alter  $this
 	 */
 	public function addIndex($column, $type = "INDEX")
 	{
@@ -92,7 +89,7 @@ class Alter implements Builder
 
 	/**
 	 * @param  string $column The column name
-	 * @return \Peyote\Alter  $this
+	 * @return \Bistro\Data\Query\Alter  $this
 	 */
 	public function dropColumn($column)
 	{
@@ -101,7 +98,7 @@ class Alter implements Builder
 	}
 
 	/**
-	 * @return \Peyote\Alter  $this
+	 * @return \Bistro\Data\Query\Alter  $this
 	 */
 	public function dropPrimaryKey()
 	{
@@ -110,7 +107,7 @@ class Alter implements Builder
 
 	/**
 	 * @param  string $index  The index
-	 * @return \Peyote\Alter  $this
+	 * @return \Bistro\Data\Query\Alter  $this
 	 */
 	public function dropIndex($index, $type = "INDEX")
 	{
@@ -121,7 +118,7 @@ class Alter implements Builder
 	/**
 	 * {@inheritDoc}
 	 *
-	 * @throws \Peyote\Exception
+	 * @throws \Bistro\Data\Query\Exception
 	 */
 	public function compile()
 	{
@@ -129,7 +126,7 @@ class Alter implements Builder
 
 		if (empty($conditions))
 		{
-			throw new \Peyote\Exception("\Peyote\Alter is an empty statement");
+			throw new \Bistro\Data\Exception("\Bistro\Data\Query\Alter is an empty statement");
 		}
 
 		$query = array("ALTER", "TABLE", $this->getTable());

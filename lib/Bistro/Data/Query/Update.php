@@ -1,6 +1,6 @@
 <?php
 
-namespace Peyote;
+namespace Bistro\Data\Query;
 
 /**
  * Building a UPDATE query.
@@ -8,24 +8,21 @@ namespace Peyote;
  * See Select for the full rant, but the tl;dr is that php 4 is messing up my
  * classes, so I have to actually declare where() and limit() in this class
  * instead of just using the cool passthru functionality.
- *
- * @package    Peyote
- * @author     Dave Widmer <dave@davewidmer.net>
  */
-class Update extends \Peyote\Query
+class Update extends Query
 {
 	/**
-	 * @var \Peyote\Where  The where object
+	 * @var \Bistro\Data\Query\Where  The where object
 	 */
 	protected $where = null;
 
 	/**
-	 * @var \Peyote\Order  The order object
+	 * @var \Bistro\Data\Query\Order  The order object
 	 */
 	protected $order_by = null;
 
 	/**
-	 * @var \Peyote\Limit  The limit object
+	 * @var \Bistro\Data\Query\Limit  The limit object
 	 */
 	protected $limit = null;
 
@@ -47,9 +44,9 @@ class Update extends \Peyote\Query
 	 */
 	public function __construct($table = null)
 	{
-		$this->where = new \Peyote\Where;
-		$this->order_by = new \Peyote\Order;
-		$this->limit = new \Peyote\Limit;
+		$this->where = new \Bistro\Data\Query\Where;
+		$this->order_by = new \Bistro\Data\Query\Order;
+		$this->limit = new \Bistro\Data\Query\Limit;
 
 		parent::__construct($table);
 	}
@@ -58,7 +55,7 @@ class Update extends \Peyote\Query
 	 * Set key/value pairs for the update.
 	 *
 	 * @param  array $data  The data to set
-	 * @return \Peyote\Update
+	 * @return \Bistro\Data\Query\Update
 	 */
 	public function set(array $data)
 	{
@@ -72,7 +69,7 @@ class Update extends \Peyote\Query
 	 * @param  string $column  The column name
 	 * @param  string $op      The comparison operator
 	 * @param  mixed  $value   The value to bind
-	 * @return \Peyote\Delete
+	 * @return \Bistro\Data\Query\Update
 	 */
 	public function where($column, $op, $value)
 	{	
@@ -84,7 +81,7 @@ class Update extends \Peyote\Query
 	 * Sets the limit.
 	 *
 	 * @param  int $num  The number to limit the queries to
-	 * @return \Peyote\Select
+	 * @return \Bistro\Data\Query\Update
 	 */
 	public function limit($num)
 	{

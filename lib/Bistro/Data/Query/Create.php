@@ -1,12 +1,9 @@
 <?php
 
-namespace Peyote;
+namespace Bistro\Data\Query;
 
 /**
  * The Create table class
- *
- * @package    Peyote
- * @author     Dave Widmer <dave@davewidmer.net>
  */
 class Create extends Drop
 {
@@ -40,7 +37,7 @@ class Create extends Drop
 
 	/**
 	 * @param array $columns   The columns to set.
-	 * @return \Peyote\Create  $this
+	 * @return \Bistro\Data\Query\Create  $this
 	 */
 	public function setColumns(array $columns)
 	{
@@ -57,8 +54,8 @@ class Create extends Drop
 	}
 
 	/**
-	 * @param array|string     The key(s) to set
-	 * @return \Peyote\Create  $this
+	 * @param array|string $keys     The key(s) to set
+	 * @return \Bistro\Data\Query\Create  $this
 	 */
 	public function setPrimaryKey($keys)
 	{
@@ -73,7 +70,7 @@ class Create extends Drop
 
 	/**
 	 * @param string $key      The name of the primary key to add
-	 * @return \Peyote\Create  $this
+	 * @return \Bistro\Data\Query\Create  $this
 	 */
 	public function addPrimaryKey($key)
 	{
@@ -95,7 +92,7 @@ class Create extends Drop
 
 	/**
 	 * @param  string $engine  The database engine
-	 * @return \Peyote\Create  $this
+	 * @return \Bistro\Data\Query\Create  $this
 	 */
 	public function setEngine($engine)
 	{
@@ -113,7 +110,7 @@ class Create extends Drop
 
 	/**
 	 * @param  string $charset  The character set.
-	 * @return \Peyote\Create   $this
+	 * @return \Bistro\Data\Query\Create   $this
 	 */
 	public function setCharset($charset)
 	{
@@ -139,7 +136,7 @@ class Create extends Drop
 		$columns = array();
 		foreach ($this->getColumns() as $column)
 		{
-			if ($column instanceof \Peyote\Column)
+			if ($column instanceof \Bistro\Data\Query\Column)
 			{
 				if ($column->isPrimaryKey())
 				{

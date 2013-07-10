@@ -1,16 +1,13 @@
 <?php
 
-namespace Peyote;
+namespace Bistro\Data\Query;
 
 /**
  * The base Query class for SELECT, INSERT, UPDATE and DELETE statement.
  *
  * These four classes will share some functionality, so let us share!
- *
- * @package    Peyote
- * @author     Dave Widmer <dave@davewidmer.net>
  */
-abstract class Query implements \Peyote\Builder
+abstract class Query implements Builder
 {
 	/**
 	 * @var array  Bound parameters
@@ -52,7 +49,7 @@ abstract class Query implements \Peyote\Builder
 	 * Sets the name of the table.
 	 *
 	 * @param  string $name  The table name
-	 * @return \Peyote\Query
+	 * @return \Bistro\Data\Query\Query
 	 */
 	public function table($name)
 	{
@@ -65,7 +62,7 @@ abstract class Query implements \Peyote\Builder
 	 *
 	 * @param  string $mixin  The name of the mixin
 	 * @param  array $methods  A list of methods to add
-	 * @return \Petoyte\Query
+	 * @return \Bistro\Data\Query\Query
 	 */
 	public function addMethods($mixin, array $methods)
 	{
@@ -91,11 +88,11 @@ abstract class Query implements \Peyote\Builder
 	 * The only bit of magic in this codebase. This is necessary so we can add
 	 * mixins.
 	 *
-	 * @throws \Peyote\Exception
+	 * @throws \Bistro\Data\Exception
 	 *
 	 * @param  string $name   The name of the method to call
 	 * @param  array  $param  The passed in parameters
-	 * @return \Peyote\Query
+	 * @return \Bistro\Data\Query\Query
 	 */
 	public function __call($name, $params)
 	{
@@ -108,7 +105,7 @@ abstract class Query implements \Peyote\Builder
 		}
 		else
 		{
-			throw new \Peyote\Exception("Call to undefined method ".get_called_class()."::{$name}()");
+			throw new \Bistro\Data\Exception("Call to undefined method ".get_called_class()."::{$name}()");
 		}
 	}
 

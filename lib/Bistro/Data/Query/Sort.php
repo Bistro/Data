@@ -1,14 +1,11 @@
 <?php
 
-namespace Peyote;
+namespace Bistro\Data\Query;
 
 /**
  * An abstract starting class for the ORDER BY and GROUP BY classes.
- *
- * @package    Peyote
- * @author     Dave Widmer <dave@davewidmer.net>
  */
-abstract class Sort implements \Peyote\Builder
+abstract class Sort implements Builder
 {
 	/**
 	 * @var array  The order clauses.

@@ -1,6 +1,6 @@
 <?php
 
-namespace Peyote;
+namespace Bistro\Data\Query;
 
 /**
  * Building a SELECT query.
@@ -10,34 +10,31 @@ namespace Peyote;
  * so I had to just move the methods here and call back. Lame I know, but the
  * only other choice was to go back down to 5.2 and name everything with
  * underscores, and I didn't want to do that, so here we are...
- *
- * @package    Peyote
- * @author     Dave Widmer <dave@davewidmer.net>
  */
-class Select extends \Peyote\Query
+class Select extends Query
 {
 	/**
-	 * @var \Peyote\Join  The join object
+	 * @var \Bistro\Data\Query\Join  The join object
 	 */
 	protected $join = null;
 
 	/**
-	 * @var \Peyote\Where  The where object
+	 * @var \Bistro\Data\Query\Where  The where object
 	 */
 	protected $where = null;
 
 	/**
-	 * @var \Peyote\Group  The group object
+	 * @var \Bistro\Data\Query\Group  The group object
 	 */
 	protected $group_by = null;
 
 	/**
-	 * @var \Peyote\Order  The order object
+	 * @var \Bistro\Data\Query\Order  The order object
 	 */
 	protected $order_by = null;
 
 	/**
-	 * @var \Peyote\Limit  The limit object
+	 * @var \Bistro\Data\Query\Limit  The limit object
 	 */
 	protected $limit = null;
 
@@ -69,11 +66,11 @@ class Select extends \Peyote\Query
 	 */
 	public function __construct($table = null)
 	{
-		$this->join = new \Peyote\Join;
-		$this->where = new \Peyote\Where;
-		$this->group_by = new \Peyote\Group;
-		$this->order_by = new \Peyote\Order;
-		$this->limit = new \Peyote\Limit;
+		$this->join = new \Bistro\Data\Query\Join;
+		$this->where = new \Bistro\Data\Query\Where;
+		$this->group_by = new \Bistro\Data\Query\Group;
+		$this->order_by = new \Bistro\Data\Query\Order;
+		$this->limit = new \Bistro\Data\Query\Limit;
 
 		parent::__construct($table);
 	}
@@ -81,7 +78,7 @@ class Select extends \Peyote\Query
 	/**
 	 * Run a SELECT DISTINCT query.
 	 *
-	 * @return \Peyote\Select
+	 * @return \Bistro\Data\Query\Select
 	 */
 	public function distinct()
 	{
@@ -93,7 +90,7 @@ class Select extends \Peyote\Query
 	 * Specify the columns to select.
 	 *
 	 * @param  string ...  Any number of string column names
-	 * @return \Peyote\Select
+	 * @return \Bistro\Data\Query\Select
 	 */
 	public function columns()
 	{
@@ -104,7 +101,7 @@ class Select extends \Peyote\Query
 	 * Specify the columns to select as an array.
 	 *
 	 * @param  array $columns  The columns to select
-	 * @return \Peyote\Select
+	 * @return \Bistro\Data\Query\Select
 	 */
 	public function columnsArray(array $columns)
 	{
@@ -117,7 +114,7 @@ class Select extends \Peyote\Query
 	 *
 	 * @param  string $table  The table name
 	 * @param  string $type   The type of join
-	 * @return \Peyote\Select
+	 * @return \Bistro\Data\Query\Select
 	 */
 	public function join($table, $type = null)
 	{
@@ -131,7 +128,7 @@ class Select extends \Peyote\Query
 	 * @param  string $column  The column name
 	 * @param  string $op      The comparison operator
 	 * @param  mixed  $value   The value to bind
-	 * @return \Peyote\Select
+	 * @return \Bistro\Data\Query\Select
 	 */
 	public function where($column, $op, $value)
 	{	
@@ -143,7 +140,7 @@ class Select extends \Peyote\Query
 	 * Sets the limit.
 	 *
 	 * @param  int $num  The number to limit the queries to
-	 * @return \Peyote\Select
+	 * @return \Bistro\Data\Query\Select
 	 */
 	public function limit($num)
 	{
@@ -155,7 +152,7 @@ class Select extends \Peyote\Query
 	 * The offset number.
 	 *
 	 * @param  int $num The number of rows to offset by
-	 * @return \Peyote\Select
+	 * @return \Bistro\Data\Query\Select
 	 */
 	public function offset($num)
 	{

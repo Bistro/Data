@@ -1,14 +1,11 @@
 <?php
 
-namespace Peyote;
+namespace Bistro\Data\Query;
 
 /**
  * The ORDER BY clause builder.
- *
- * @package    Peyote
- * @author     Dave Widmer <dave@davewidmer.net>
  */
-class Order extends \Peyote\Sort implements \Peyote\Mixin
+class Order extends Sort implements Mixin
 {
 	/**
 	 * Gets the type of sorting query we are running.
@@ -25,7 +22,7 @@ class Order extends \Peyote\Sort implements \Peyote\Mixin
 	 *
 	 * @param  string $column     The column name
 	 * @param  string $direction  The direction to sort on
-	 * @return \Peyote\Order
+	 * @return \Bistro\Data\Query\Order
 	 */
 	public function orderBy($column, $direction = null)
 	{

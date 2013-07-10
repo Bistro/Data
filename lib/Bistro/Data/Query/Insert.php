@@ -1,14 +1,11 @@
 <?php
 
-namespace Peyote;
+namespace Bistro\Data\Query;
 
 /**
  * Building an INSERT query.
- *
- * @package    Peyote
- * @author     Dave Widmer <dave@davewidmer.net>
  */
-class Insert extends \Peyote\Query
+class Insert extends Query
 {
 	/**
 	 * @var array  A list of columns to insert
@@ -24,7 +21,7 @@ class Insert extends \Peyote\Query
 	 * Specify the columns to insert.
 	 *
 	 * @param  array $columns  The columns
-	 * @return \Peyote\Insert
+	 * @return \Bistro\Data\Query\Insert
 	 */
 	public function columns(array $columns)
 	{
@@ -36,7 +33,7 @@ class Insert extends \Peyote\Query
 	 * The values to add to the insert statement.
 	 *
 	 * @param  array $values  The column values
-	 * @return \Peyote\Insert
+	 * @return \Bistro\Data\Query\Insert
 	 */
 	public function values(array $values)
 	{

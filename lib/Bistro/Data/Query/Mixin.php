@@ -1,12 +1,9 @@
 <?php
 
-namespace Peyote;
+namespace Bistro\Data\Query;
 
 /**
  * An interface for the classes that can be used as a mixin.
- *
- * @package    Peyote
- * @author     Dave Widmer <dave@davewidmer.net>
  */
 interface Mixin
 {

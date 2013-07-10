@@ -1,12 +1,9 @@
 <?php
 
-namespace Peyote;
+namespace Bistro\Data\Query;
 
 /**
  * A class to define columns
- *
- * @package    Peyote
- * @author     Dave Widmer <dave@davewidmer.net>
  */
 class Column implements Builder
 {
@@ -100,7 +97,7 @@ class Column implements Builder
 
 	/**
 	 * @param  string $name    The new column name
-	 * @return \Peyote\Column  $this
+	 * @return \Bistro\Data\Query\Column  $this
 	 */
 	public function setName($name)
 	{
@@ -118,7 +115,7 @@ class Column implements Builder
 
 	/**
 	 * @param  string $type    The data type
-	 * @return \Peyote\Column  $this
+	 * @return \Bistro\Data\Query\Column  $this
 	 */
 	public function setType($type)
 	{
@@ -146,7 +143,7 @@ class Column implements Builder
 
 	/**
 	 * @param  boolean $is_null  Should this column be null?
-	 * @return \Peyote\Column
+	 * @return \Bistro\Data\Query\Column
 	 */
 	public function setIsNull($is_null)
 	{
@@ -164,7 +161,7 @@ class Column implements Builder
 
 	/**
 	 * @param  string $length  The field length
-	 * @return \Peyote\Column  $this
+	 * @return \Bistro\Data\Query\Column  $this
 	 */
 	public function setLength($length)
 	{
@@ -182,7 +179,7 @@ class Column implements Builder
 
 	/**
 	 * @param  array $options  The column options.
-	 * @return \Peyote\Column  $this
+	 * @return \Bistro\Data\Query\Column  $this
 	 */
 	public function setOptions(array $options)
 	{
@@ -192,7 +189,7 @@ class Column implements Builder
 
 	/**
 	 * @param  string $option The option to add
-	 * @return \Peyote\Column
+	 * @return \Bistro\Data\Query\Column
 	 */
 	public function addOption($option)
 	{
@@ -214,7 +211,7 @@ class Column implements Builder
 
 	/**
 	 * @param  boolean $flag  Set auto increment?
-	 * @return \Peyote\Column
+	 * @return \Bistro\Data\Query\Column
 	 */
 	public function setAutoIncrement($flag)
 	{
@@ -232,7 +229,7 @@ class Column implements Builder
 
 	/**
 	 * @param  string $value The default value
-	 * @return \Peyote\Column
+	 * @return \Bistro\Data\Query\Column
 	 */
 	public function setDefault($value)
 	{

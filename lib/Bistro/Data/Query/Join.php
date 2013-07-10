@@ -1,14 +1,11 @@
 <?php
 
-namespace Peyote;
+namespace Bistro\Data\Query;
 
 /**
  * The JOIN clause builder.
- *
- * @package    Peyote
- * @author     Dave Widmer <dave@davewidmer.net>
  */
-class Join implements \Peyote\Builder, \Peyote\Mixin
+class Join implements Builder, Mixin
 {
 	/**
 	 * @var array  The internal list of joins
@@ -25,7 +22,7 @@ class Join implements \Peyote\Builder, \Peyote\Mixin
 	 *
 	 * @param  string $table  The table name
 	 * @param  string $type   The type of join
-	 * @return \Peyote\Join
+	 * @return \Bistro\Data\Query\Join
 	 */
 	public function addJoin($table, $type = null)
 	{
@@ -36,18 +33,18 @@ class Join implements \Peyote\Builder, \Peyote\Mixin
 	/**
 	 * Creates an ON join.
 	 *
-	 * @throws \Peyote\Exception
+	 * @throws \Bistro\Data\Exception
 	 *
 	 * @param  string $column1  The column from the first table
 	 * @param  string $op       The operator
 	 * @param  string $column2  The column from the second table
-	 * @return \Peyote\Join
+	 * @return \Bistro\Data\Query\Join
 	 */
 	public function on($column1, $op, $column2)
 	{
 		if ($this->active_join === null)
 		{
-			throw new \Peyote\Exception("You need to start a join before calling \Peyote\Join::on()");
+			throw new \Bistro\Data\Exception("You need to start a join before calling \Bistro\Data\Query\Join::on()");
 		}
 
 		list($table, $type) = $this->active_join;
@@ -59,16 +56,16 @@ class Join implements \Peyote\Builder, \Peyote\Mixin
 	/**
 	 * Create a USING join.
 	 *
-	 * @throws \Peyote\Exception
+	 * @throws \Bistro\Data\Exception
 	 *
 	 * @param  string $column  The column to join on
-	 * @return \Peyote\Join
+	 * @return \Bistro\Data\Query\Join
 	 */
 	public function using($column)
 	{
 		if ($this->active_join === null)
 		{
-			throw new \Peyote\Exception("You need to start a join before calling \Peyote\Join::using()");
+			throw new \Bistro\Data\Exception("You need to start a join before calling \Bistro\Data\Query\Join::using()");
 		}
 
 		list($table, $type) = $this->active_join;

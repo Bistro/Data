@@ -1,14 +1,11 @@
 <?php
 
-namespace Peyote;
+namespace Bistro\Data\Query;
 
 /**
  * An abstract starting class for the WHERE and HAVING classes.
- *
- * @package    Peyote
- * @author     Dave Widmer <dave@davewidmer.net>
  */
-abstract class Condition implements \Peyote\Builder
+abstract class Condition implements Builder
 {
 	/**
 	 * @var array  The order clauses.

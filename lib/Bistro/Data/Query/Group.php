@@ -1,14 +1,11 @@
 <?php
 
-namespace Peyote;
+namespace Bistro\Data\Query;
 
 /**
  * The GROUP BY clause builder.
- *
- * @package    Peyote
- * @author     Dave Widmer <dave@davewidmer.net>
  */
-class Group extends \Peyote\Sort implements \Peyote\Mixin
+class Group extends Sort implements Mixin
 {
 	/**
 	 * Gets the type of sorting query we are running.
@@ -25,7 +22,7 @@ class Group extends \Peyote\Sort implements \Peyote\Mixin
 	 *
 	 * @param  string $column     The column name
 	 * @param  string $direction  The direction to sort on
-	 * @return \Peyote\Group
+	 * @return \Bistro\Data\Query\Group
 	 */
 	public function groupBy($column, $direction = null)
 	{

@@ -1,14 +1,11 @@
 <?php
 
-namespace Peyote;
+namespace Bistro\Data\Query;
 
 /**
  * The LIMIT # clause builder.
- *
- * @package    Peyote
- * @author     Dave Widmer <dave@davewidmer.net>
  */
-class Limit implements \Peyote\Builder, \Peyote\Mixin
+class Limit implements Builder, Mixin
 {
 	/**
 	 * @var int  The limit number
