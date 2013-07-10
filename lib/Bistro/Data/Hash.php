@@ -44,13 +44,22 @@ class Hash implements \ArrayAccess, \Countable, \IteratorAggregate
 	}
 
 	/**
-	 * @param  string $name   The property name
-	 * @param  mixed  $value  The property value
-	 * @return \Bisto\Data\Hash    $this
+	 * @param  mixed  $prop      The property name as string or an array of key => value pairs
+	 * @param  mixed  $value     The property value
+	 * @return \Bisto\Data\Hash  $this
 	 */
-	public function set($key, $value)
+	public function set($prop, $value = null)
 	{
-		$this->offsetSet($key, $value);
+		if ( ! \is_array($prop))
+		{
+			$prop = array($prop => $value);
+		}
+
+		foreach ($prop as $key => $value)
+		{
+			$this->offsetSet($key, $value);
+		}
+
 		return $this;
 	}
 

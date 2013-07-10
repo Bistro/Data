@@ -47,6 +47,14 @@ class HashTest extends PHPUnit_Framework_TestCase
 		$this->assertSame('Yes!', $this->hash->get('extra'));
 	}
 
+	public function testSetArray()
+	{
+		$data = array('name' => 'David', 'author' => false);
+		$this->hash->set($data);
+
+		$this->assertSame($data, $this->hash->toArray());
+	}
+
 	public function testDelete()
 	{
 		$this->hash->delete('author');
