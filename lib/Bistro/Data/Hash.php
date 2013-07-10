@@ -153,6 +153,15 @@ class Hash implements \ArrayAccess, \Countable, \IteratorAggregate
 		$this->offsetSet($property, $value);
 	}
 
+	/**
+	 * @param  string  $prop The property name to check for
+	 * @return boolean
+	 */
+	public function __isset($prop)
+	{
+		return $this->offsetExists($prop);
+	}
+
 /** ====================
 	ArrayAccess
 	==================== **/
