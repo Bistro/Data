@@ -44,6 +44,14 @@ class Model extends Hash
 	}
 
 	/**
+	 * @return array  An array of errors (empty array for valid data)
+	 */
+	public function validate()
+	{
+		return array();
+	}
+
+	/**
 	 * @param mixed $offset
 	 * @param mixed $value
 	 */
