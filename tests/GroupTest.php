@@ -7,7 +7,7 @@ class GroupTest extends PHPUnit_Framework_TestCase
 	public function setUp()
 	{
 		parent::setUp();
-		$this->query = new \Peyote\Group;
+		$this->query = new \Bistro\Data\Query\Group;
 	}
 
 	public function testEmpty()

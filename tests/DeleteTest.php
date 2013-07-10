@@ -7,7 +7,7 @@ class DeleteTest extends PHPUnit_Framework_TestCase
 	public function setUp()
 	{
 		parent::setUp();
-		$this->query = new \Peyote\Delete('user');
+		$this->query = new \Bistro\Data\Query\Delete('user');
 	}
 
 	public function testAll()

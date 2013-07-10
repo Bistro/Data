@@ -7,11 +7,11 @@ class AlterTest extends PHPUnit_Framework_TestCase
 	public function setUp()
 	{
 		parent::setUp();
-		$this->alter = new \Peyote\Alter('user');
+		$this->alter = new \Bistro\Data\Query\Alter('user');
 	}
 
 	/**
-	 * @expectedException \Peyote\Exception
+	 * @expectedException \Bistro\Data\Exception
 	 */
 	public function testNoConditionsThrowsException()
 	{
@@ -28,7 +28,7 @@ class AlterTest extends PHPUnit_Framework_TestCase
 
 	public function testAddColumnClass()
 	{
-		$column = new \Peyote\Column('activated', 'TINYINT', array('is_null' => false));
+		$column = new \Bistro\Data\Query\Column('activated', 'TINYINT', array('is_null' => false));
 		$this->alter->addColumn($column);
 
 		$expected = 'ALTER TABLE user ADD activated TINYINT NOT NULL';

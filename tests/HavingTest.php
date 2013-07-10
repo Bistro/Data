@@ -7,7 +7,7 @@ class HavingTest extends PHPUnit_Framework_TestCase
 	public function setUp()
 	{
 		parent::setUp();
-		$this->query = new \Peyote\Having;
+		$this->query = new \Bistro\Data\Query\Having;
 	}
 
 	public function testEmpty()

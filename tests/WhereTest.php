@@ -7,7 +7,7 @@ class WhereTest extends PHPUnit_Framework_TestCase
 	public function setUp()
 	{
 		parent::setUp();
-		$this->query = new \Peyote\Where;
+		$this->query = new \Bistro\Data\Query\Where;
 	}
 
 	public function testEmpty()

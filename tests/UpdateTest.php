@@ -11,7 +11,7 @@ class UpdateTest extends PHPUnit_Framework_TestCase
 	public function setUp()
 	{
 		parent::setUp();
-		$this->query = new \Peyote\Update('user');
+		$this->query = new \Bistro\Data\Query\Update('user');
 		$this->query->set($this->data);
 	}
 

@@ -7,7 +7,7 @@ class SelectTest extends PHPUnit_Framework_TestCase
 	public function setUp()
 	{
 		parent::setUp();
-		$this->query = new \Peyote\Select('user');
+		$this->query = new \Bistro\Data\Query\Select('user');
 	}
 
 	public function testAll()
@@ -71,7 +71,7 @@ class SelectTest extends PHPUnit_Framework_TestCase
 	}
 
 	/**
-	 * @expectedException \Peyote\Exception
+	 * @expectedException \Bistro\Data\Exception
 	 */
 	public function testUndefinedMethod()
 	{

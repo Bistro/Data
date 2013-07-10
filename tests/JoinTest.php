@@ -7,7 +7,7 @@ class JoinTest extends PHPUnit_Framework_TestCase
 	public function setUp()
 	{
 		parent::setUp();
-		$this->query = new \Peyote\Join;
+		$this->query = new \Bistro\Data\Query\Join;
 	}
 
 	public function testEmpty()
@@ -22,7 +22,7 @@ class JoinTest extends PHPUnit_Framework_TestCase
 	}
 
 	/**
-     * @expectedException \Peyote\Exception
+     * @expectedException \Bistro\Data\Exception
      */
 	public function testOnWithoutJoin()
 	{
@@ -36,7 +36,7 @@ class JoinTest extends PHPUnit_Framework_TestCase
 	}
 
 	/**
-     * @expectedException \Peyote\Exception
+     * @expectedException \Bistro\Data\Exception
      */
 	public function testUsingWithoutJoin()
 	{

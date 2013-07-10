@@ -7,7 +7,7 @@ class ColumnTest extends PHPUnit_Framework_TestCase
 	public function setUp()
 	{
 		parent::setUp();
-		$this->column = new \Peyote\Column('user_id', 'INT');
+		$this->column = new \Bistro\Data\Query\Column('user_id', 'INT');
 	}
 
 	public function testDefault()
@@ -41,7 +41,7 @@ class ColumnTest extends PHPUnit_Framework_TestCase
 
 	public function testSetDefault()
 	{
-		$column = new \Peyote\Column('create_date', 'TIMESTAMP', array(
+		$column = new \Bistro\Data\Query\Column('create_date', 'TIMESTAMP', array(
 			'default' => 'CURRENT_TIMESTAMP'
 		));
 		$this->runAssert('create_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP', $column);
@@ -49,7 +49,7 @@ class ColumnTest extends PHPUnit_Framework_TestCase
 
 	public function testSerial()
 	{
-		$column = new \Peyote\Column('user_id', 'serial');
+		$column = new \Bistro\Data\Query\Column('user_id', 'serial');
 
 		$this->assertTrue($column->isPrimaryKey());
 		$this->runAssert('user_id INT UNSIGNED NOT NULL AUTO_INCREMENT', $column);
@@ -60,7 +60,7 @@ class ColumnTest extends PHPUnit_Framework_TestCase
 	 */
 	public function testConstructorOptions()
 	{
-		$column = new \Peyote\Column('user_id', 'INT', array(
+		$column = new \Bistro\Data\Query\Column('user_id', 'INT', array(
 			'is_null' => false,
 			'length' => 8,
 			'options' => array('UNSIGNED', 'ZEROFILL'),

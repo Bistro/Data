@@ -7,7 +7,7 @@ class OrderTest extends PHPUnit_Framework_TestCase
 	public function setUp()
 	{
 		parent::setUp();
-		$this->query = new \Peyote\Order;
+		$this->query = new \Bistro\Data\Query\Order;
 	}
 
 	public function testEmpty()

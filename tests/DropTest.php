@@ -7,7 +7,7 @@ class DropTest extends PHPUnit_Framework_TestCase
 	public function setUp()
 	{
 		parent::setUp();
-		$this->drop = new \Peyote\Drop('test');
+		$this->drop = new \Bistro\Data\Query\Drop('test');
 	}
 
 	public function testDrop()

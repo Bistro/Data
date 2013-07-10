@@ -7,7 +7,7 @@ class InsertTest extends PHPUnit_Framework_TestCase
 	public function setUp()
 	{
 		parent::setUp();
-		$this->query = new \Peyote\Insert('user');
+		$this->query = new \Bistro\Data\Query\Insert('user');
 	}
 
 	public function testSimple()

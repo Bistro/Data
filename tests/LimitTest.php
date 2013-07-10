@@ -7,7 +7,7 @@ class LimitTest extends PHPUnit_Framework_TestCase
 	public function setUp()
 	{
 		parent::setUp();
-		$this->query = new \Peyote\Limit;
+		$this->query = new \Bistro\Data\Query\Limit;
 	}
 
 	public function testEmpty()

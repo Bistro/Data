@@ -7,14 +7,14 @@ class CreateTest extends PHPUnit_Framework_TestCase
 	public function setUp()
 	{
 		parent::setUp();
-		$this->create = new \Peyote\Create('user');
+		$this->create = new \Bistro\Data\Query\Create('user');
 
 		// Mixing columns and strings...
 		$this->create->setColumns(array(
-			new \Peyote\Column('user_id', 'serial'),
-			new \Peyote\Column('name', 'varchar', array('length' => 50, 'is_null' => false)),
+			new \Bistro\Data\Query\Column('user_id', 'serial'),
+			new \Bistro\Data\Query\Column('name', 'varchar', array('length' => 50, 'is_null' => false)),
 			'password varchar(100) NOT NULL',
-			new \Peyote\Column('create_date', 'timestamp', array('is_null' => false, 'default' => 'CURRENT_TIMESTAMP'))
+			new \Bistro\Data\Query\Column('create_date', 'timestamp', array('is_null' => false, 'default' => 'CURRENT_TIMESTAMP'))
 		));
 	}
 
